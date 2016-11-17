@@ -1,0 +1,7 @@
+Harry Potter,250,J.K. Rowling,Yes
+Hunger Games,400,Suzanne Collins,No
+The Pillars Of The Earth,1000,Ken Follet,Yes
+The Art Of War,300,Sun Tzu,Yes
+Gomorra,500,Roberto Saviano,No
+Robinson Crusoe,600,Daniel Defoe,Yes
+Bla,100,Roberto,Yes
