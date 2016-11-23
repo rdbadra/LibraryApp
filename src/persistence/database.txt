@@ -5,3 +5,5 @@ The Art Of War,300,Sun Tzu,Yes
 Gomorra,500,Roberto Saviano,No
 Robinson Crusoe,600,Daniel Defoe,Yes
 Bla,100,Roberto,Yes
+La Sombra del Viento,500,Carlos Ruiz Zafon,No
+Revival,400,Stephen King,Yes

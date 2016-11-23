@@ -4,6 +4,7 @@ import model.Book;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 /**
  * Created by roberto on 22/11/16.
@@ -16,7 +17,7 @@ public class BookSwingPanel extends JPanel{
     JTextField availability = new JTextField(10);
     JButton backButton = new JButton("Back");
 
-    public BookSwingPanel(Book book){
+    public BookSwingPanel(){
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 80, 80));
         this.book = book;
         this.add(new JLabel("Book"));
@@ -28,13 +29,17 @@ public class BookSwingPanel extends JPanel{
         this.add(new JLabel("Availability"));
         this.add(availability);
         this.add(backButton);
-        setBook();
+
     }
 
-    public void setBook(){
+    public void setBook(Book book){
         bookname.setText(book.getBookName());
         numberOfPages.setText(""+book.getNumberOfPages());
         author.setText(book.getAuthor());
         availability.setText(book.getAvailability());
+    }
+
+    public void addBackButtonListener(ActionListener actionListener){
+        backButton.addActionListener(actionListener);
     }
 }

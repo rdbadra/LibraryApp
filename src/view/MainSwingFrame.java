@@ -13,6 +13,8 @@ public class MainSwingFrame extends JFrame{
     private Database database;
     LoginSwingPanel loginSwingPanel = new LoginSwingPanel(database);
     SearchSwingPanel searchSwingPanel = new SearchSwingPanel();
+    BookAdditionSwingPanel bookAdditionSwingPanel = new BookAdditionSwingPanel();
+    BookSwingPanel bookSwingPanel = new BookSwingPanel();
 
     public MainSwingFrame(Database database){
         this.database = database;
@@ -31,6 +33,14 @@ public class MainSwingFrame extends JFrame{
 
     public SearchSwingPanel getSearchSwingPanel(){
         return searchSwingPanel;
+    }
+
+    public BookAdditionSwingPanel getBookAdditionSwingPanel(){
+        return bookAdditionSwingPanel;
+    }
+
+    public BookSwingPanel getBookSwingPanel(){
+        return bookSwingPanel;
     }
 
 }

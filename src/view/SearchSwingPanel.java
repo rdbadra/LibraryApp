@@ -22,6 +22,10 @@ public class SearchSwingPanel extends JPanel {
         this.add(logoutButton);
     }
 
+    public void cleanSearch(){
+        bookTextField.setText("");
+    }
+
     public String getBookTextField(){
         return bookTextField.getText();
     }

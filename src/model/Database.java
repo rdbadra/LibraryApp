@@ -38,7 +38,7 @@ public class Database {
     public void add(Book newBook){
         //Escribir tambien en el archivo database.txt
         bookDatabase.add(newBook);
-        System.out.println("model.Book added");
+        System.out.println("Book added");
         System.out.println(bookDatabase.size());
     }
 
@@ -61,14 +61,14 @@ public class Database {
     public void remove(String bookName){
         Book bookToRemove = this.search(bookName);
         bookDatabase.remove(bookToRemove);
-        System.out.println("model.Book removed");
+        System.out.println("Book removed");
     }
 
     public Book search(String bookName){
         int databaseSize = bookDatabase.size();
         Book result = null;
         for(Book book : bookDatabase){
-            System.out.println("model.Book name:" + bookName);
+            System.out.println("Book name:" + bookName);
             System.out.println(book.getBookName());
             result = (book.search(bookName)? book : null);
             if (result != null) return result;
