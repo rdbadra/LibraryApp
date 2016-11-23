@@ -12,7 +12,7 @@ public class SearchPanel extends Panel{
     public SearchPanel(Database database, BookPanel bookPanel, MainPanel mainpanel, Screen screen){
         this.database = database;
         this.setLayoutManager(new GridLayout(5));
-        this.addComponent(new Label("model.Book"));
+        this.addComponent(new Label("Book"));
         TextBox bookName = new TextBox();
         this.addComponent(bookName);
         Button search = new Button("Search", new Runnable() {
