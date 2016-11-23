@@ -1,7 +1,9 @@
 package controller;
 
+import model.Book;
 import model.Database;
 import model.UserDatabase;
+import view.BookSwingPanel;
 import view.LoginSwingPanel;
 import view.MainSwingFrame;
 
@@ -20,12 +22,14 @@ public class SwingController {
         this.model = model;
         this.view = view;
         //I need to add the action listeners
-        addAplicationListeners();
+        addApplicationListeners();
     }
 
-    private void addAplicationListeners() {
+    private void addApplicationListeners() {
         view.getLoginSwingPanel().addLoginActionListener(new LoginListener());
         view.getLoginSwingPanel().addRegisterActionListener(new RegisterListener());
+        view.getSearchSwingPanel().addSearchListener(new SearchListener());
+        view.getSearchSwingPanel().addLogoutListener(new LogoutListener());
     }
 
     class LoginListener implements ActionListener{
@@ -37,6 +41,7 @@ public class SwingController {
             String password = loginSwingPanel.getPassword();
             if((new UserDatabase()).logInUser(username, password)){
                 loginSwingPanel.setVisible(false);
+                loginSwingPanel.deleteInputFields();
                 view.setContentPane(view.getSearchSwingPanel());
             }
         }
@@ -59,6 +64,39 @@ public class SwingController {
 
         }
 
+    }
+
+    class SearchListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String bookName = view.getSearchSwingPanel().getBookTextField();
+            if(bookName.length() > 0){
+                Book book = (new Database()).search(bookName);
+                if(book != null){
+                    view.getSearchSwingPanel().setVisible(false);
+                    view.setContentPane(new BookSwingPanel(book));
+                }else {
+                    JOptionPane.showMessageDialog(null, "Book not found");
+
+                };
+
+            }
+
+        }
+
+
+    }
+
+    class LogoutListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            view.getSearchSwingPanel().setVisible(false);
+            LoginSwingPanel swingPanel = view.getLoginSwingPanel();
+            swingPanel.setVisible(true);
+            view.setContentPane(view.getLoginSwingPanel());
+        }
     }
 
 

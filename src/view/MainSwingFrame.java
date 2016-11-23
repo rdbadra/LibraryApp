@@ -32,4 +32,5 @@ public class MainSwingFrame extends JFrame{
     public SearchSwingPanel getSearchSwingPanel(){
         return searchSwingPanel;
     }
+
 }

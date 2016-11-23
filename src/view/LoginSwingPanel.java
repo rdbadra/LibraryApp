@@ -35,14 +35,22 @@ public class LoginSwingPanel extends JPanel {
     }
 
     public void addLoginActionListener(ActionListener actionListener){
+
         loginButton.addActionListener(actionListener);
     }
 
     public String getUsername(){
+
         return usernameTextField.getText();
     }
 
     public String getPassword(){
+
         return passwordTextField.getText();
+    }
+
+    public void deleteInputFields(){
+        usernameTextField.setText("");
+        passwordTextField.setText("");
     }
 }
